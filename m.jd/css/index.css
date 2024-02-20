@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 750px;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, Helvetica;
+    line-height: 1.5;
+    /* color: #666; */
+    /* height: 1000px; */
+}
+
+ul li{
+    list-style: none;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+.app {
+    position: relative;
+    /* 父亲有高度孩子在浮动时不会有清楚浮动问题 */
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    /* 高度也会继承父类高度，能继承都会继承 */
+    background: #333;
+    height: 45px;
+    text-align:center;
+    line-height: 45px;
+    /* 使所以li颜色改成白色 */
+    color: #fff;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(1) img{
+    width: 10px;
+    height: 10px;
+    /* 图片是行内块元素，（行内元素）可以text-align:center和line-weight */
+    /* 10px的图片比较小，和文字差不多大，基线对齐差不多可以对齐 */
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img{
+    width: 30px;
+    height: 30px;
+    /* 图片是行内块元素，使图片和文字居中对齐 */
+    vertical-align: middle
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background: #f63515;
+}
+
+.search-wrap {
+    position: fixed;
+    height: 44px;
+    overflow: hidden;
+    width: 100%;
+    /* min-width: 320px;
+    max-width: 750px; */
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    /* 定位需要有一个高度 */
+    height: 44px;
+    color: #fff;
+    /* margin-right: 40px; */
+    /* background: pink; */
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    background: rgb(55, 13, 133);
+    border-radius: 15px;
+    background: #fff;
+    /* 圣杯布局 margin左右值要大一点不然不起作用,这个数值算好了很多居中也不用设置 */
+    margin: 7px 50px;
+}
+
+.jd-icon {
+    position: absolute;
+    /* display: inline-block; */
+    width: 20px;
+    height: 15px;
+    top: 8px;
+    left: 10px;
+    /* background-color: palevioletred; */
+    background: url(../images/jd-icon.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.jd-icon::after {
+    /* 子绝父.jd-icon绝 */
+    position: absolute;
+    top: 0;
+    right: -6px;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: #ccc;
+}
+
+.search-input-left-icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 8px;
+    left: 45px;
+    background: url(../images/jd-sprites.png) no-repeat -82px 0;
+    background-size: 200px;
+}
+
+input {
+    position: absolute;
+    top: 5px;
+    left: 100px;
+}
+
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    line-height: 44px;
+    /* text-align: center; */
+    /* margin-left: 40px; */
+    /* background: purple; */
+} 
+
+.slider img {
+    width: 100%;
+}
+
+.brand {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+/* 图片和盒子宽度都是1/5 圆角边框overflow:hidden */
+.brand img {
+    float: left;
+    width: 20%;
+}
+
+nav {
+    margin-top: 5px;
+}
+
+nav a {
+    /* 浮动之后行内元素a img也不需要转换 */
+    float: left;
+    width: 20%;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+nav a span {
+    display: block;
+}
+
+nav a img {
+    width: 30px;
+    margin: 10px auto;
+}
+
+.news {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    border-left: 1px solid #ccc;
+    width: 25%;
+}
+/* 盒子浮动不是图片浮动 */
+.news img {
+    width: 100%;
+    /* float: left; */
+}
+
+
+/* .news img:nth-child(2),
+.news img:nth-child(3) {
+    width: 25%;
+}
+
+.news img:nth-child(3) {
+    width: 25%;
+} */
